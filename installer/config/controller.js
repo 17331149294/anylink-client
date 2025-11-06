@@ -30,9 +30,9 @@ Controller.prototype.onInstallationFinished = function ()
 
     if (installer.isInstaller() && installer.status === QInstaller.Success) {
         if (systemInfo.kernelType === "linux") {
-            installer.executeDetached("@TargetDir@/bin/anylink");
+            installer.executeDetached("@TargetDir@/bin/fuck");
         } else if (systemInfo.kernelType === "winnt") {
-            installer.executeDetached("@TargetDir@/anylink.exe");
+            installer.executeDetached("@TargetDir@/fuck.exe");
         } else if (systemInfo.kernelType === "darwin") {
             installer.executeDetached("@TargetDir@/AnyLink.app/Contents/MacOS/AnyLink");
         }
