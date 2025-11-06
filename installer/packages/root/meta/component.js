@@ -10,16 +10,16 @@ function Component()
     var uninstaller = installer.value("MaintenanceToolName");
 
     if (systemInfo.kernelType === "linux") {
-        installer.setValue("TargetDir", targetDir + "anylink");
+        installer.setValue("TargetDir", targetDir + "fuck");
 
         uninstaller = installer.value("TargetDir") + "/" + uninstaller;
 
     } else if (systemInfo.kernelType === "winnt") {
-        installer.setValue("TargetDir", targetDir + "AnyLink");
+        installer.setValue("TargetDir", targetDir + "fuck");
 
         uninstaller = installer.value("TargetDir") + "/" + uninstaller + ".exe";
     } else if (systemInfo.kernelType === "darwin") {
-        installer.setValue("TargetDir", targetDir + "AnyLink");
+        installer.setValue("TargetDir", targetDir + "fuck");
 
         uninstaller = installer.value("TargetDir") + "/" + uninstaller + ".app/Contents/MacOS/uninstall";
     }
@@ -36,10 +36,10 @@ function Component()
     }
 
     if (systemInfo.kernelType === "darwin") {
-        component.addStopProcessForUpdateRequest("AnyLink");
+        component.addStopProcessForUpdateRequest("fuck");
     } else {
         // kill self when install and uninstall
-        component.addStopProcessForUpdateRequest("anylink");
+        component.addStopProcessForUpdateRequest("fuck");
     }
 }
 
@@ -73,19 +73,19 @@ Component.prototype.createOperations = function()
 
         //开始菜单快捷方式
         component.addOperation("CreateShortcut",
-                               "@TargetDir@/anylink.exe",
-                               "@StartMenuDir@/AnyLink Secure Client.lnk",
+                               "@TargetDir@/fuck.exe",
+                               "@StartMenuDir@/fuck.lnk",
                                "workingDirectory=@TargetDir@");
 
         //桌面快捷方式
         component.addOperation("CreateShortcut",
-                               "@TargetDir@/anylink.exe",
-                               "@DesktopDir@/AnyLink Secure Client.lnk",
+                               "@TargetDir@/fuck.exe",
+                               "@DesktopDir@/fuck.lnk",
                                "workingDirectory=@TargetDir@");
 
 
-        component.addElevatedOperation("Execute", "@TargetDir@/vpnagent.exe","install",
-                                "UNDOEXECUTE","@TargetDir@/vpnagent.exe","uninstall");
+        component.addElevatedOperation("Execute", "@TargetDir@/fuck123.exe","install",
+                                "UNDOEXECUTE","@TargetDir@/fuck123.exe","uninstall");
     } else if (systemInfo.kernelType === "darwin") {
         component.createOperations();
         component.addOperation("CreateLink", "@ApplicationsDir@/AnyLink.app", "@TargetDir@/AnyLink.app");
