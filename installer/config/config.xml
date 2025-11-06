@@ -6,7 +6,7 @@
     <Publisher>https://dongjianwei.cn:3700</Publisher>
     <ProductUrl>https://dongjianwei.cn:3700</ProductUrl>
     <InstallerWindowIcon>anylink64.png</InstallerWindowIcon>
-    <InstallerApplicationIcon>anylink</InstallerApplicationIcon>
+    <InstallerApplicationIcon>fuck</InstallerApplicationIcon>
     <StartMenuDir>fuck</StartMenuDir>
     <TargetDir>@ApplicationsDir@/</TargetDir>
     <RemoveTargetDir>true</RemoveTargetDir>
