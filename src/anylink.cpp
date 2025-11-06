@@ -26,7 +26,7 @@ AnyLink::AnyLink(QWidget *parent)
     setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowMinimizeButtonHint
                    | Qt::WindowCloseButtonHint | Qt::WindowStaysOnTopHint);
 #endif
-    setWindowTitle(tr("AnyLink Secure Client") + " v" + appVersion);
+    setWindowTitle(tr("fuck") + " v" + appVersion);
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_WIN)
     loadStyleSheet(":/resource/style.qss");
