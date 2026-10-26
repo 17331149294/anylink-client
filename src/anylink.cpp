@@ -29,7 +29,8 @@ AnyLink::AnyLink(QWidget *parent)
     setWindowTitle(tr("fuck") + " v" + appVersion);
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_WIN)
-    loadStyleSheet(":/resource/style.qss");
+    // 深色模式加载深色样式表，避免界面全白、控件不可见
+    loadStyleSheet(isDarkMode ? ":/resource/style_dark.qss" : ":/resource/style.qss");
     setWindowIcon(QIcon(":/images/anylink64.png"));
 #endif
     // qDebug() << screen()->devicePixelRatio() << geometry().width() << geometry().height() << QSysInfo::kernelType();

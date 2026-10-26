@@ -4,6 +4,8 @@
 
 QString agentName = "AnyLink Secure Client";
 
+bool isDarkMode = false;
+
 QString appVersion = "0.9.5";
 
 QString configLocation = "";

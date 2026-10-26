@@ -12,6 +12,9 @@ enum SaveFormat {
 
 extern QString agentName;
 
+// 系统是否处于深色模式（Windows 深色主题等）
+extern bool isDarkMode;
+
 extern QString appVersion;
 extern QString configLocation;
 extern QString tempLocation;

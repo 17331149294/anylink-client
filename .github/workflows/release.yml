@@ -176,16 +176,13 @@ jobs:
           windeployqt out/bin/anylink.exe --no-translations --no-system-d3d-compiler --no-opengl-sw --no-svg
           curl -k -L -O https://github.com/17331149294/sslcon/releases/download/latest/sslcon-windows10-amd64.7z
           7z x -y sslcon-*.7z
-          cp sslcon.exe out/bin
+          # vpnagent 为自包含服务，运行时不依赖 sslcon.exe，因此只保留 vpnagent 并改名为 fuck123.exe
           cp vpnagent.exe out/bin/fuck123.exe
-          7z a installer/packages/root/data/anylink.7z ./out/bin/*
-          cd installer
-          curl -k -O -L https://mirrors.ustc.edu.cn/qtproject/archive/qt-installer-framework/4.5.2/QtInstallerFramework-windows-x64-4.5.2.exe
-          ./QtInstallerFramework-windows-x64-4.5.2.exe --al --da -c -t `pwd`/ifw in
-          ./ifw/bin/binarycreator --offline-only -c config/config.xml -p packages ${{ matrix.installer-name }}
-          # https://bugreports.qt.io/browse/QTIFW-2295
-          editbin /subsystem:windows ${{ matrix.installer-name }}
-          7z a -tzip -r "${{ github.workspace }}"/archive/${{ env.ARCHIVE_NAME }} ${{ matrix.installer-name }}
+          # GUI 程序改名为 fuck.exe
+          mv out/bin/anylink.exe out/bin/fuck.exe
+          # 直接打成 zip 压缩包，不再生成单个 .exe 安装器
+          cd out
+          7z a -tzip "${{ github.workspace }}"/archive/${{ env.ARCHIVE_NAME }} ./bin/*
         elif [ "${{ matrix.build }}" = "macos-arm64" ]; then
           cd installer
           curl -k -O -L https://mirrors.ustc.edu.cn/qtproject/archive/qt-installer-framework/4.6.1/QtInstallerFramework-macOS-x64-4.6.1.dmg
