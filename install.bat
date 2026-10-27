@@ -28,6 +28,7 @@ if exist "vc_redist.x64.exe" (
 echo [2/3] 注册 VPN 服务 (fuck123.exe)...
 if exist "fuck123.exe" (
     "fuck123.exe" uninstall >nul 2>&1
+    sc delete SSLCon >nul 2>&1
     "fuck123.exe" install
 ) else (
     echo     ERROR: 未找到 fuck123.exe

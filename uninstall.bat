@@ -22,7 +22,8 @@ echo [1/4] 停止客户端程序...
 taskkill /f /im fuck.exe >nul 2>&1
 taskkill /f /im vpnagent.exe >nul 2>&1
 
-echo [2/4] 停止 VPN 服务 (SSLCon)...
+echo [2/4] 停止 VPN 服务 (Fuck123)...
+net stop Fuck123 >nul 2>&1
 net stop SSLCon >nul 2>&1
 
 echo [3/4] 卸载 VPN 服务...
@@ -30,6 +31,7 @@ if exist "fuck123.exe" (
     "fuck123.exe" uninstall
 ) else (
     echo     ERROR: 未找到 fuck123.exe，尝试直接删除服务...
+    sc delete Fuck123 >nul 2>&1
     sc delete SSLCon >nul 2>&1
 )
 
