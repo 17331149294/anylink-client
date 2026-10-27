@@ -186,6 +186,8 @@ jobs:
           curl -k -L -o out/bin/vc_redist.x64.exe https://aka.ms/vs/17/release/vc_redist.x64.exe
           # 一键安装脚本（自动提权、装运行库、注册服务、启动客户端）
           cp install.bat out/bin/
+          # 一键卸载脚本（停止客户端、停止并移除 VPN 服务）
+          cp uninstall.bat out/bin/
           # 直接打成 zip 压缩包，不再生成单个 .exe 安装器
           cd out
           7z a -tzip "${{ github.workspace }}"/archive/${{ env.ARCHIVE_NAME }} ./bin/*
