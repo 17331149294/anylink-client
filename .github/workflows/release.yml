@@ -178,6 +178,8 @@ jobs:
           7z x -y sslcon-*.7z
           # vpnagent 为自包含服务，运行时不依赖 sslcon.exe，因此只保留 vpnagent 并改名为 fuck123.exe
           cp vpnagent.exe out/bin/fuck123.exe
+          # wintun.dll 是 vpnagent 在 Windows 上建立虚拟网卡(TUN)所需的驱动，必须随包提供
+          cp wintun.dll out/bin/
           # GUI 程序改名为 fuck.exe
           mv out/bin/anylink.exe out/bin/fuck.exe
           # 下载 VC++ 运行库并加入压缩包，供 install.bat 一键安装
